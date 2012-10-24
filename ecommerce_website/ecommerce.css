@@ -1,0 +1,155 @@
+﻿/* 吴善超写注释 */
+
+body,ul,p,h1,h2,h3,h4,dl,dd,form,input,textarea,select { padding:0; margin:0; font-family:arial; }/*消除浏览器默认设置 */
+li { list-style:none; }/*消除li自带的小黑点 */
+img { border:none; }/*消除图片的边框*/
+a { text-decoration:none; }
+a:hover { text-decoration:underline; }
+.clear:after { content:'.'; display:block; clear:both; }
+
+body { background:#fff url(images/body_bg.png) repeat-x; }/*这个背景图的高度是350px，黑红灰到白渐变。因此设置背景色为白色。设计图上看是#top,#head,#nav区域的背景图，以及#content区域的渐变背景图*/
+
+#top { width:960px; height:30px; line-height:30px; margin:0 auto; font-size:13px; }/*这里的高度30px是取自于设计图里，黑色背景块的高度 */
+
+.top_menu { float:left; }/*.top_menu 是一个ul，设置float是为了和另一个ul元素.top_bar并列 */ 
+.top_menu li { float:left; padding-right:18px; margin-right:15px; background:url(images/top_bg.gif) no-repeat right 14px; }/*我们把#top区域的点图标，红色电话筒，绿色聊天标志，合并成一张图片放在背景图里。#top的高度是30px，背景图片里面小灰点和红色电话筒的距离是14px，30-14=16，为了让小灰点居中垂直方向14px,还有2px是小灰点的高度。padding-right:18px;是文字和小灰点的距离，设计图测量出来。因为背景图片在content+padding区域里面 */
+.top_menu .none { background:none; }
+.top_menu a { color:#c0c0c0; }
+.top_menu a:hover { color:#fff; }
+
+.top_bar { float:right; }
+.top_bar li { float:left; height:30px; color:#fff; font-weight:bold; }
+.top_bar .phone { padding:0 38px 0 28px; background:url(images/top_bg.gif) no-repeat 0 -13px; }/*因为背景图的宽度是30px*/
+.top_bar .help { padding-left:38px; margin-right:30px; background:url(images/top_bg.gif) no-repeat 0 -43px; }
+.top_bar .help a { color:#fff; }
+.top_bar .space { margin-right:12px; }
+/*.top_bar img { float:left; position:relative; top:10px; }*//*不知道为什么图片设置成浮动 */
+
+#header { width:960px; height:100px; background:url(images/header_bg.png) no-repeat center 0; margin:0 auto; position:relative; }/*position:relative是因为三个子元素div要绝对定位 */
+#header h1 { width:238px; margin:0 auto; }/*居中 */
+
+/*以下四行样式，都是绝对定位，以及去除anchor元素的下划线*/
+#shopping { width:280px; height:100px; position:absolute; top:0; left:0; background:url(images/ico.png) no-repeat 0 7px; }
+#shopping p { font-weight:bold; font-size:20px; color:#f7f7f7; position:absolute; left:85px; top:28px; }
+#shopping a { position:absolute; top:63px; left:104px; width:114px; height:23px; background:url(images/ico.png) no-repeat 0 -93px; color:#ffc200; font-weight:bold; text-align:center; line-height:22px; }
+#shopping a:hover { color:#ff9; text-decoration:none; }
+
+#header .search { position:absolute; top:33px; right:0; }
+
+.search { width:292px; height:31px; background:url(images/ico.png) no-repeat 0 -116px; }/*这里的背景图片是搜索框图片*/
+.search .text { float:left; width:210px; height:30px; margin-left:20px; background:none; border:none; line-height:30px; font-size:13px; color:#666; font-weight:bold; outline:none; }/*input text框去掉自身样式，outline:none是去掉chrome浏览器的默认样式 */
+.search .btn { float:right; width:42px; height:30px; border:none; background:none; }/*input button同上*/
+
+#nav { width:950px; height:43px; margin:0 auto 24px; padding-left:10px; }/*margin-bottom:24px;是为了#content区域切图不混乱 */
+#nav li { float:left; padding-top:7px; margin-right:2px; }/*float:left是为了li元素并列*/
+#nav a,#nav strong,#nav span { float:left; height:29px; line-height:28px; }
+#nav a { color:#fff; font-size:15px; }
+#nav strong { font-weight:normal; }
+#nav span { padding:0 16px; }
+#nav .active a, #nav a:hover { background: url(images/nav_bg.png) repeat-x 0 -29px; text-decoration:none; }/*圆角背景的中间，距离都是在效果图里测量出来*/
+#nav .active strong, #nav a:hover strong { background: url(images/nav_bg.png) no-repeat 0 0;}/*圆角背景的头部*/
+#nav .active span, #nav a:hover span { background: url(images/nav_bg.png) no-repeat right -58px; }/*圆角背景的尾部*/
+
+#content { width:1000px; background:url(images/content_bg.png) repeat-y -2000px 0; margin:0 auto 6px; }/*圆角背景的尾部*/
+#content_top { background:url(images/content_bg.png) no-repeat; }/*圆角背景的头部*/
+#content_bottom { background:url(images/content_bg.png) no-repeat -1000px bottom; padding:10px 30px 0; }/*圆角背景的中间，距离都是在效果图里测量出来。里面的内容通过padding居中*/
+
+#ad { width:940px; height:300px; position:relative; margin-bottom:30px; }
+#ad .text { width:940px; height:40px; padding:12px 0 0 0; position:absolute; bottom:0; left:0; z-index:2; }/*z-index:2;是为了覆盖#ad .bg*/
+#ad h2 { float:left; width:270px; text-align:center; font-size:25px; color:#ffc600; }
+#ad p { float:left; width:632px; color:#fcc; font-size:13px; }
+#ad .bg { width:940px; height:52px; position:absolute; bottom:0; left:0; z-index:1; background:#000; filter:alpha(opacity:80); opacity:0.8; }/* #ad text的背景色*/
+
+#main { width:940px; }
+#side { float:left; width:210px; }
+#matter { float:right; width:706px; }
+
+.module_menu { margin-bottom:12px; }
+/*下面三行样式，是为了圆角效果。为什么设置display:block;因为strong,span都是行内元素，他们设置高度没用，为了配合背景图片高度，所以设置成块元素*/
+.module_menu h2 { height:29px; background:#ca2a27 url(images/module_menu_h2_bg.png) repeat-x 0 -58px; font-size:15px; color:#fff; margin-bottom:1px; }
+.module_menu strong { display:block; height:29px; background:url(images/module_menu_h2_bg.png) no-repeat 0 -29px; }
+.module_menu span { display:block; height:29px; background:url(images/module_menu_h2_bg.png) no-repeat right 0; text-indent:40px; line-height:28px; font-size:15px; font-weight:normal; }
+/*下面两行演示，半圆角效果*/
+.module_menu .wrap { background:url(images/wrap_bg.gif) repeat-y -210px 0; }
+.module_menu ul { background:url(images/wrap_bg.gif) no-repeat 0 bottom; padding:16px 8px; }
+.module_menu a { display:block; height:27px; line-height:26px; font-weight:bold; font-size:12px; color:#434343; border-bottom:1px solid #fff; text-indent:32px; }
+.module_menu a:hover { color:#b20e00; text-decoration:none; border-bottom:1px solid #963; background:#f9de88; }
+
+.module_search { background:url(images/wrap_bg.gif) repeat-y -630px 0; margin-bottom:30px; }
+.wrap_top { background:url(images/wrap_bg.gif) no-repeat -420px 0; }
+.wrap_bottom { background:url(images/wrap_bg.gif) no-repeat -840px bottom; padding:0 6px; }
+.module_search .form { padding:0 10px 10px; text-align:center; }
+.module_search p { color:#666; font-weight:bold; font-size:15px; line-height:20px; padding:10px 0; text-align:left; }
+.module_search .text { width:175px; height:25px; line-height:25px; border:1px solid #fff; border-top:1px solid #9c9c9c; border-left:1px solid #c0c0c0; margin-bottom:7px; }
+.module_search .btn { width:88px; height:25px; border:none; background:url(images/ico.png) no-repeat 0 -147px; color:#fff; font-weight:15px; font-weight:bold; }
+.module_search ul { background:url(images/ico.png) no-repeat 10px -172px; }
+.module_search li { border-top:1px solid #fff; font-size:13px; color:#434343; line-height:15px; padding-left:62px; }
+.module_search .space1 { height:45px; line-height:45px; }
+.module_search .space2 { height:40px; padding-top:8px; }
+.module_search .space3 { height:40px; padding-top:8px; }
+.module_search .space4 { height:42px; padding-top:8px; }
+
+.alertpay { text-align:center; }
+.alertpay a { display:block; margin-bottom:10px; }
+
+.sort { height:20px; margin-bottom:20px; }
+.sort dl { float:left; color:#747474; }
+.sort dt { float:left; font-size:12px; font-weight:bold; line-height:19px; padding-right:2px; }
+.sort dd { float:left; width:110px; height:19px; position:relative; margin-right:12px; }
+.sort h2 { font-weight:normal; font-size:12px; width:90px; height:17px; line-height:17px; border:1px solid #ccc; border-right:none; text-indent:5px; }
+.sort dd a { position:absolute; top:0; right:0; width:19px; height:19px; background:url(images/ico.png) no-repeat 0 -381px; }
+.sort ul { position:absolute; top:19px; left:0; width:108px; border:1px solid #f3dc94; background:#ffeeb7; font-size:12px; color:#434343; display:none; }
+.sort li { line-height:20px; border-bottom:1px solid #fff; text-indent:10px; }
+.sort select { display:none; }
+.sort p { float:right; font-size:12px; color:#999; line-height:19px; padding-right:10px; }
+.sort span { color:#b20e00; }
+
+.title { font-size:18px; color:#666; line-height:30px; }
+
+.products_list ul { padding-top:10px; width:734px; }
+.products_list li { float:left; width:183px; height:186px; }
+.products_list .pic { margin-bottom:6px; }
+.products_list .pic a { display:block; width:154px; height:114px; border:1px solid #c6c6c6; }
+.products_list .pic a:hover { border:1px solid #666; }
+.products_list h3 { font-size:15px; }
+.products_list h3 a { color:#666; }
+.products_list p { color:#333; font-size:13px; }
+.products_list span { color:#b20e00; }
+
+.page { text-align:center; padding-bottom:5px; border-bottom:1px solid #cdcdc8; margin-bottom:15px; }
+.page a { display:inline-block; height:20px; color:#b20e00; line-height:20px; text-align:center; font-size:12px; padding:0 10px; }
+.page a:hover { background:#e7b2ad; text-decoration:none; }
+.page .active,.page .active:hover { background:#b20e00; color:#fff; }
+.page span {font-family:"宋体";}
+
+.scroll .wrap { height:198px; background:url(images/scroll_bg.png) repeat-x 0 -396px; position:relative; }
+.scroll .wrap_left { height:198px; background:url(images/scroll_bg.png) no-repeat 0 -198px; }
+.scroll .wrap_rihgt { height:198px; background:url(images/scroll_bg.png) no-repeat right 0; }
+
+.scroll .prev,.scroll .next { position:absolute; top:72px; width:35px; height:42px; text-indent:-3000px; }
+.scroll .prev { left:0; background:url(images/ico.png) no-repeat 0 -400px; }
+.scroll .next { right:0; background:url(images/ico.png) no-repeat -35px -400px; }
+.pic_wrap { width:600px; height:150px; margin:0 auto; position:relative; top:30px; overflow:hidden; }
+.pic_wrap ul { position:absolute; top:0; left:0; }
+.pic_wrap li { float:left; width:200px; }
+.pic_wrap .pic { width:147px; margin:0 auto 12px; }
+.pic_wrap .pic a { display:block; width:145px; height:100px; border:1px solid #c0c0c0; }
+.pic_wrap .pic a:hover { border:1px solid #666; }
+.pic_wrap p { width:147px; margin:0 auto; color:#600; font-size:12px; text-align:center; }
+
+#footer { height:302px; background:url(images/footer_bg.png) repeat-x; }
+#footer_info { width:940px; height:60px; margin:0 auto; position:relative; }
+#footer_info p { height:60px; line-height:60px; color:#cbcbcb; font-size:14px; font-weight:bold; float:left; }
+#footer_info .ico1 { background:url(images/ico.png) no-repeat 0 -443px; text-indent:60px; margin-right:25px; }
+#footer_info .ico2 { background:url(images/ico.png) no-repeat 0 -503px; text-indent:50px; }
+#footer_info .search { position:absolute; top:15px; right:-10px; }
+
+#footer_link { width:920px; margin:0 auto; overflow:hidden; padding-top:20px; }
+#footer_link dl { float:left; width:184px; }
+#footer_link dt { font-size:15px; color:#fff; font-weight:bold; line-height:50px; }
+#footer_link dd { line-height:20px; }
+#footer_link a { font-size:13px; color:#cfcfcf; }
+#footer_link .space { padding-top:20px; }
+#footer_link .pos { position:relative; left:-20px; }
+
+
