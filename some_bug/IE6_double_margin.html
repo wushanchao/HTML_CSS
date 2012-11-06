@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>IE6双边距bug</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <style type="text/css">
+        .one{
+            float: left;
+            width: 150px;
+            height:150px;
+            background:#EEE;
+            margin: 5px 0 5px 150px;
+            /*下面这个用来解决IE6双边距bug*/
+            /*display: inline;*/
+        }
+    </style>
+</head>
+<body>
+    <div class="one">Double Margin Bug(150*150)</div>
+
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>IE6内容撑开块的高度</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <style type="text/css">
+        .one{
+            height:5px;
+            width:100px;
+            background:#F60;
+            /*解决方法，去掉下面这条语句的注释*/
+            /*overflow: hidden;*/
+        }
+    </style>
+</head>
+<body>
+    <div class="one">Double Margin Bug(150*150)</div>
+
+</body>
+</html>

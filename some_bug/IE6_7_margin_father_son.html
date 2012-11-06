@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <style type="text/css">
+    	.box1{
+            height: 150px;
+            background-color: #ccc;
+            /*注释掉.box1_1的margin-top，再去掉下一条的注释，所有浏览器显示正常*/
+            /*padding-top: 50px;*/
+        }
+        .box1_1{
+            height: 50px;
+            margin-top: 50px;
+            background-color: #aaa;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <div class="box1_1">.box1和.box1_1之间没有可见内容，父元素不用margin-top，子元素用margin-top,在Firefox中父元素继承了子元素的margin-top，而子元素没有margin-top功能。IE6/7则正常显示。解决方式用padding吧</div>
+    </div>
+
+</body>
+</html>
