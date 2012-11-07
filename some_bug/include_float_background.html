@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>父元素包含float子元素，背景也包含过来</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <style type="text/css">
+        .parent{
+            background:#888;
+            border:5px solid #888;
+            /*--for IE--*/
+            /*zoom:1;*/
+        }
+    	.parent:after{ /*--for other broswer--*/
+            content:".";
+            display:block;
+            line-height:0;
+            clear:both;
+            visibility:hidden;
+        }
+        .one{
+            float:left;
+            width:100px;
+            height:100px;
+            background:#F60;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="one">One</div>
+    </div>
+
+</body>
+</html>
